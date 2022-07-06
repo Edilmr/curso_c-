@@ -1,0 +1,143 @@
+
+            //static async Task Main(string[] args)
+            //Clase 7 - usando json en c#
+            //Cerveza cer = new Cerveza(10, "Cerveza");
+            //string mijson = JsonSerializer.Serialize(cer);
+            //File.WriteAllText("objeto.txt", mijson);
+
+            string mijson = File.ReadAllText("objeto.txt");
+            Cerveza cer = JsonSerializer.Deserialize<Cerveza>(mijson);
+            Console.WriteLine(cer.Cantidad + " " + cer.Nombre);
+            //Console.WriteLine(mijson);
+
+            /* clase 8 - introduccion a los metodos http - 
+            string url = "https://jsonplaceholder.typicode.com/posts";
+            HttpClient client = new HttpClient();
+            //var res = client.GetAsync(url);
+
+            //Console.WriteLine("Hago algo");
+
+            //await res;
+
+            //Console.WriteLine("Beber cerveza");
+
+            var httpResponse = await client.GetAsync(url);
+
+            if (httpResponse.IsSuccessStatusCode)
+            {
+                var content = await httpResponse.Content.ReadAsStringAsync();
+
+                List <Tareas_consola.Post> posts =
+                    JsonSerializer.Deserialize<List<Tareas_consola.Post>>(content);
+                foreach (var item in posts)
+                {
+                    Console.WriteLine(item);
+                }
+
+            }*/
+
+            /*Clase 9 - HTTP POST, PUT y DELETE 
+             * link - https://www.youtube.com/watch?v=Q12rpPdPcD8
+             */
+
+            //string url = "https://jsonplaceholder.typicode.com/posts";            //Para el post
+            ////string url = "https://jsonplaceholder.typicode.com/posts/99";            //Para el put
+            ////var client = new HttpClient();
+
+            ////Post post = new Post()
+            ////{
+            ////    userId = 50,
+            ////    body = "Hola como estan",
+            ////    title = "Titulo de saludo"
+            ////};
+
+            ////var data = JsonSerializer.Serialize<Post>(post);
+
+            ////HttpContent content = 
+            ////    new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+            //////var httpResponse = await client.PostAsync(url, content);            //Para el post
+            ////var httpResponse = await client.PutAsync(url, content);            //Para el put
+
+            ////if (httpResponse.IsSuccessStatusCode)
+            ////{
+            ////    var result = await httpResponse.Content.ReadAsStringAsync();
+
+            ////    var postResult = JsonSerializer.Deserialize<Post>(result);
+            ////}
+
+
+
+        ////public async Task post()
+        ////{
+
+        ////    string url = "https://jsonplaceholder.typicode.com/posts";
+        ////    var client = new HttpClient();
+
+        ////    Post post = new Post()
+        ////    {
+        ////        userId = 50,
+        ////        body = "Hola como estan",
+        ////        title = "Titulo de saludo"
+        ////    };
+
+        ////    var data = JsonSerializer.Serialize<Post>(post);
+
+        ////    HttpContent content =
+        ////        new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+        ////    var httpResponse = await client.PostAsync(url, content);
+
+        ////    if (httpResponse.IsSuccessStatusCode)
+        ////    {
+        ////        var result = await httpResponse.Content.ReadAsStringAsync();
+
+        ////        var postResult = JsonSerializer.Deserialize<Post>(result);
+        ////    }
+        ////}
+
+        ////public async Task put()
+        ////{
+
+        ////    string url = "https://jsonplaceholder.typicode.com/posts/99";
+        ////    var client = new HttpClient();
+
+        ////    Post post = new Post()
+        ////    {
+        ////        userId = 50,
+        ////        body = "Hola como estan",
+        ////        title = "Titulo de saludo"
+        ////    };
+
+        ////    var data = JsonSerializer.Serialize<Post>(post);
+
+        ////    HttpContent content =
+        ////        new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+        ////    var httpResponse = await client.PutAsync(url, content);
+
+        ////    if (httpResponse.IsSuccessStatusCode)
+        ////    {
+        ////        var result = await httpResponse.Content.ReadAsStringAsync();
+
+        ////        var postResult = JsonSerializer.Deserialize<Post>(result);
+        ////    }
+        ////}
+
+        ////public async Task delete()
+        ////{
+
+        ////    string url = "https://jsonplaceholder.typicode.com/posts/99";
+        ////    var client = new HttpClient();
+
+        ////    Post post = new Post()
+        ////    {
+        ////        userId = 50,
+        ////        body = "Hola como estan",
+        ////        title = "Titulo de saludo"
+        ////    };
+
+        ////    var httpResponse = await client.DeleteAsync(url);
+
+        ////    if (httpResponse.IsSuccessStatusCode)
+        ////    {
+        ////        var result = await httpResponse.Content.ReadAsStringAsync();
+        ////    }
+        ////}
